@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="TM legal consumer rights">
+ <meta name="author" content="Wanga Mutsila">
+ <meta name="keywords" content="HTML, CSS, JavaScript">
+ 
+<title>Home page</title>
+
+<link rel ="stylesheet" href ="CSS/index.CSS">
+</head>
+
+<body>
+<header>
+<div class="navbar">
+  <img src="Images/Image2.png" alt="TM Legal Logo" class="logo">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger"> 
+   <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  
+   <ul class ="nav-links">
+<li> <a href= "index.html">Home page </a>  </li>
+<li>  <a href = "about.html">About Us</a>  </li>
+<li>  <a href ="services.html"> Services</a>  </li>
+<li>  <a href = "volunteering_donations.html">Volunteering & Donations</a>  </li>
+<li>  <a href = "FAQ.html">  FAQ</a>  </li>
+<li> <a href ="contact.html"> Contact Us </a> </li>
+
+  </ul>
+ </div>
+</header>
+
+<main class="container">
+<h1 class="main-title">Welcome to Thina Mutsila Legal</h1>
+<p> Offering legal guidance & advice to the community at large </p>
+
+<section class="contact-section">
+   <div class="contact-container">
+   
+   <!--Image on the form is on the left-->
+   <div class="contact-image" style="background-image: url('Images/Image10.jpg');">
+    
+    </div>
+	
+	<!--Form is on the right-->
+	<div class="contact-form">   
+    <p class="form-intro">
+      <i> Complete the form below and one of our legal consultants will get back to you. </i>
+    </p>
+    
+    <form class="index-form" id ="TM_Legal-form">
+     
+     <input type="text" id="name" placeholder= "Full Name:" required />
+		  <span id="nameError" class="error"></span>
+	  
+      <input type="tel" id="contact" placeholder="Contact Number:" required />
+	   <span id="contactError" class="error"></span>
+	   
+      <input type="text" id="email" placeholder="Email:" required />
+       <span id="emailError" class="error"></span>
+	  
+     <label for="service">Select Service </label> 
+      <select id="service">
+       <option value="">Select</option>
+       <option value="consultation">Legal Consultation</option> 
+       <option value="drafting">Legal Documentation Drafting</option> 
+       <option value="advice">Legal Advice</option> 
+       <option value="referral">Referral to Legal aid, etc</option>
+       <option value="other">Other</option>
+      </select>
+       <span class="error" id="serviceError"></span>
+
+    <label for="source">Where did you hear about us? </label> 
+     <select id="source">
+      <option value="">Select</option> 
+      <option value="social">Social Media</option>
+      <option value="friend">Friends or Family</option> 
+	  <option value="ad">Online Ad</option> 
+      <option value="event">Community Event</option> 
+      <option value="other">Other</option> 
+     </select>
+       <span class="error" id="sourceError"></span>
+
+      <p class="privacy-note">
+       By submitting your details, you consent to TM Legal processing and
+        retaining your personal information.
+       <a href="#">Privacy Policy</a> 
+      </p>
+
+     <button type="submit" id="submitBtn" >SUBMIT</button> 
+    </form>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+<p id="demo"></p>
+<p> &copy; 2025 ST10465276. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="Javascript/index.js"></script>
+
+</body>
+</html>

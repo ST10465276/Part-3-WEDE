@@ -1,0 +1,197 @@
+/* Reset */
+
+* {
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+body {
+font-family: Arial, sans-serif;
+background-image: url('../Images/Image5.jpg');
+background-repeat: no-repeat;   
+background-size: cover;        
+color: #036c5f;
+}
+/* Nav bar */
+.navbar {
+display: flex;
+justify-content: space-between;  
+align-items: center;
+padding:1rem 2rem;
+background-color: #726f6b;
+position: relative;
+z-index: 5;
+}
+.logo {
+height:80px;
+width:140px;
+object-fit: contain;
+}
+.nav-links {
+list-style: none;
+display: flex;
+gap: 1.5rem;
+
+}
+.nav-links a{
+color: black;
+text-decoration: none;
+font-weight: bold;
+}
+
+.nav-links a:hover {
+color: #00bcd4;
+
+}
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+display: none;
+flex-direction: column;
+width: 30px;
+height: 21px;
+justify-content: space-between;
+}
+.hamburger span {
+display: none;
+height: 3px;
+width: 100%;
+background: black;
+margin: 4px 0;
+transition: 0.4s;
+
+}
+/* Hamburger animation when menu is toggled */
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+/* Responsive */
+
+@media (max-width: 768px) {
+
+.nav-links {
+position: absolute;
+top: 70px;
+left: 0;
+width: 100%;
+background-color: #333;
+flex-direction: column;
+align-items: center;
+display: none;
+
+}
+
+.hamburger {
+display: flex; 
+}
+.navbar {
+padding: 1rem; 
+}
+.logo {
+height: 60px; 
+width: 100px;
+}
+.nav-links {
+ display: none; 
+ flex-direction: column;  
+ width: 100%;
+background-color: grey;  
+ align-items: center;
+ position: absolute;
+ top: 100%;
+ left: 0;
+z-index: 10;
+
+}
+#menu-toggle:checked ~ .nav-links {
+ display: flex; 
+
+}
+
+}
+.container {
+  max-width: 1200px;
+  margin:auto;         
+  padding: 20px;
+}
+
+/* Main content */
+main {
+padding: 2rem;
+text-align: center;
+}
+.main-title {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2.5rem;
+	font-style: italic;
+	color:black;
+    margin-bottom: 1rem;
+}
+
+/* Section titles */
+.section-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+	font-style: italic;
+	color:black;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Section paragraphs */
+main p {
+    margin-bottom: 1rem;
+	font-weight: bold;
+	font-style: italic;
+	color:black;
+}
+.core-value {
+    margin-bottom: 1rem;
+    text-align: left;
+	margin-left: 10px;
+}
+.value-title {
+    font-weight: bold; 
+    font-style: italic;
+    color: black;
+	margin-left: 10px; 
+}
+.value-desc {
+    font-style: italic;
+    font-weight: bold;	
+    color: black;
+    margin-left: 10px; 
+}
+.impact-subheading {
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+/* Footer styling */
+footer {
+font-style: italic;
+background-color:  #726f6b;
+text-align: center;
+color: black;
+padding: 2.5rem 1rem;
+}
+.footer-nav a:hover {
+
+color: #00bcd4;
+}
+.footer-info {
+
+text-align: center;
+font-size: 0.9rem;
+color: #ccc;
+}

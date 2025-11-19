@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Meet our team fighting for justice">
+ <meta name="author" content="Wanga Mutsila">
+ <meta name="keywords" content="HTML, CSS, JavaScript">
+ 
+<title>About Us</title>
+<link rel ="stylesheet" href ="CSS/about.CSS">
+</head>
+
+<body> 			  
+<header>
+
+ <div class="navbar">
+  <img src="Images/Image2.png" alt="TM Legal Logo" class="logo">
+  
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger"> 
+   <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  
+    <ul class ="nav-links">
+ <li> <a href= "index.html">Home page</a> </li>
+ <li> <a href = "about.html">About Us</a> </li>
+<li> <a href ="services.html">Services</a> </li>
+<li> <a href = "volunteering_donations.html">Volunteering & Donations</a></li>
+<li> <a href = "FAQ.html">  FAQ</a> </li>
+<li>  <a href ="contact.html"> Contact Us </a> </li>
+  </ul>
+ </div>
+</header>
+
+<main class="container">
+<h1 class="main-title">About Us</h1>
+
+<section>
+   <h2 class="section-title">Brief History:</h2>
+<p> TM Legal is a non-profit organisation founded by Thinavhuyo Mutsila a LLB graduate,to bridge the justice gap in South Africa for the unprivileged. </p>
+<p>Her belief is that everyone deserves access to fair legal guidance and support.Committed to empowering communities through legal knowledge and assistance.  </p>
+<p> TM Legal is people-orientated and driven by justice for all. They provide free legal advice,hosts community workshops and offers volunteer opportunities for law students. </p>
+</section>
+
+<section>
+    <h2 class="section-title">Mission and Vision Statements:</h2>
+<p>TM Legal provides cost-free, accessible legal advice and guidance to South Africa’s most vulnerable communities,</p>
+<p>empowering individuals with knowledge of their rights while promoting justice and fairness.</p>
+<p>We envision a society where everyone has equal access to justice and where law students gain practical,</p>
+<p> community-focused experience, preparing the next generation of legal professionals to make a meaningful impact in their profession.</p>
+</section>
+
+<section class="core-values-section">
+    <h2 class="section-title">Core Values</h2>
+
+    <div class="core-value">
+      <span class="value-title">Integrity:</span>
+      <span class="value-desc">We uphold the highest ethical standards in all our legal services and interactions.</span>
+    </div>
+
+    <div class="core-value">
+      <span class="value-title">Justice & Fairness:</span>
+      <span class="value-desc">We believe that every individual deserves justice and equal access to legal resources, despite their background.</span>
+    </div>
+
+    <div class="core-value">
+      <span class="value-title">Collaboration:</span>
+      <span class="value-desc">We foster partnerships and teamwork with law students, other legal organisations, and the community.</span>
+    </div>
+
+    <div class="core-value">
+      <span class="value-title">Education:</span>
+      <span class="value-desc">We provide learning opportunities for young, eager law students learning about their profession while serving the community.</span>
+    </div>
+
+    <div class="core-value">
+      <span class="value-title">Empowerment:</span>
+      <span class="value-desc">We aim to equip disadvantaged individuals with the knowledge and resources to understand and protect their rights.</span>
+    </div>
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Our Impact</h2>
+    <p class="section-title impact-subheading">TM Legal has made an impactful difference in our community:</p>
+    <p>Over 120 individuals have received free legal advice and guidance on legal issues ranging from family law to employment disputes.</p>
+    <p>10 law students have gained hands-on experience through our volunteer program, learning practical skills while contributing to real-life cases.</p>
+    <p>We’ve hosted 3 community workshops, empowering community members with knowledge of their legal rights and resources available to them.</p>
+    <p>Through our outreach, we’ve directly supported families and individuals who might otherwise have had no access to legal assistance.</p>
+    <p>Each person we assist brings us closer to our vision of a society where justice is accessible to all.</p>
+  </section>
+  
+</main>
+
+<footer>
+<p id="demo"></p>
+<p> &copy; 2025 ST10465276. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function updateClock() {
+        const now = new Date();
+        const options = {
+            timeZone: "Africa/Johannesburg",
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        };
+
+        const parts = new Intl.DateTimeFormat('en-ZA', options).formatToParts(now);
+        const dayName = parts.find(p => p.type === 'weekday').value;
+        const day     = parts.find(p => p.type === 'day').value;
+        const month   = parts.find(p => p.type === 'month').value;
+        const year    = parts.find(p => p.type === 'year').value;
+        const time    = `${parts.find(p => p.type === 'hour').value}:${
+                         parts.find(p => p.type === 'minute').value.padStart(2, '0')}:${
+                         parts.find(p => p.type === 'second').value.padStart(2, '0')}`;
+
+        const demo = document.getElementById("demo");
+        if (demo) {
+            demo.textContent = `${dayName}, ${day} ${month} ${year} at ${time}`;
+        }
+    }
+	updateClock();
+    setInterval(updateClock, 1000);
+});
+</script>
+</body>
+</html>

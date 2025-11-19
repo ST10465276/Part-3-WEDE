@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Enquiries,how to apply?">
+ <meta name="author" content="Wanga Mutsila">
+ <meta name="keywords" content="legal, rights">
+ 
+<title>FAQ</title>
+<link rel ="stylesheet" href ="CSS/FAQ.CSS">
+</head>
+<body>
+<header>
+
+ <div class="navbar">
+  <img src="Images/Image2.png" alt="TM Legal Logo" class="logo">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger"> 
+   <span></span>
+    <span></span>
+    <span></span>
+  </label> 
+    <ul class ="nav-links">
+<li> <a href= "index.html">Home page</a> </li>
+<li> <a href = "about.html">About Us </a> </li>
+<li> <a href ="services.html">Services </a> </li>
+<li> <a href = "volunteering_donations.html">Volunteering & Donations</a> </li>
+<li> <a href = "FAQ.html">FAQ</a> </li>
+<li> <a href ="contact.html">Contact Us </a> </li>
+ </ul>
+ </div>
+</header>
+
+<main class="container two-column">
+ <section class="faq-section">
+<h1 class="main-title">FAQ (Frequently Asked Questions)</h1>
+
+<details> <p>   
+  <summary> What is Thina Mutsila Legal? </summary> 
+ <p> TM Legal is an non-profit organisation founded by Thinavhuyo Mutsila,a LLB graduate
+ who aimes to provide free legal advice and assistance to underprivileged and disadvantaged members of the community.</p>
+</p> </details>
+
+<details> <p>
+  <summary> Can students apply for the volunteering? </summary> 
+ <p> Yes. We welcome all interested candidates to volunteer at TM Legal.Particularly, law students are encouraged to apply 
+as volunteering provides valuable practical experience and an opportunity to contribute to community legal support. </p>
+</p> </details>
+
+
+<details> <p>
+  <summary> What type of legal matters do you handle? </summary> 
+<h3> We mainly focus on:  </h3>
+<ul>
+<li> Community education and legal awareness  </li>
+<li>  Human rights and constitutional issues </li>
+<li>  But we can also assist in other legal matters, to the best of our capabilities </li>
+</ul>
+</p> </details>
+
+
+<details> <p>
+  <summary> Do you provide legal representation in court? </summary> 
+ <p> No,TM Legal does not represent you in court but we do offer legal advice, referral to pro bono attorneys and mandated organizations where necessary. 
+</p> </details>
+
+
+
+<details> <p>
+<summary> Do you offer paying positions to volunteering legal students ?</summary> 
+ <p> Currently,TM legal being a small organisation does not have the capacity to offer paying positions 
+but as we grow, hopefully with more funding will create oppportunites for our upcoming students </p>
+</p> </details>
+
+
+<details> <p>
+<summary> How can I donate to support your mission?</summary> 
+<h3> Donations can be made via:  </h3>
+<ul>
+<li> Bank transfer, our banking details are provided under the "Donations" link </li>
+<li> Or you are free to come In-person at our office  </li>
+<p>Every contribution helps us continue to provide legal aid to those in need </p>
+</ul>
+</p> </details>
+
+
+<details> <p>
+<summary> What documentation do I need to provide to receive assistance?</summary> 
+ <p>Depending on your case, all required documentation will be discussed and confirmed to the client during the consultation.</p>
+</p> </details>  
+
+
+<details> <p>
+ <summary> Do you offer your services only online? </summary>
+<p>No,we offer our services both online and in-person, but preferrably in-person in order to get a better feel of the case at hand</p> 
+</p> </details>
+
+</section>
+
+  <section class="enquiry-section">
+ <h2>For Any Enquires, please fill in below:</h2>
+<form id="enquiryForm">
+<div class="field">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required minlength="2">
+<div class="error" id="nameError"></div>
+</div>
+
+<div class="field">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" required>
+<div class="error" id="emailError"></div>
+</div>
+
+<div class="field">
+<label for="password">Password</label>
+<input type="password" id="password" name="password" required minlength="8">
+<div class="error" id="passwordError"></div>
+</div>
+
+<div class="field">
+  <label for="confirmPassword">Confirm Password</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8">
+  <div class="error" id="confirmPasswordError"></div>
+</div>
+
+<button type="submit">Submit</button> <button type="reset">Clear</button>
+</form>
+ </section>
+ </main>
+ 
+ <footer>
+<p id="demo"></p>
+<p> &copy; 2025 ST10465276. All rights reserved.</p>
+</footer>
+ <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initialize EmailJS with your Public Key
+        emailjs.init("gOm6mI9saHyV-NnzE");
+
+// FOOTER LIVE CLOCK — EXACT SAME AS YOUR DONATIONS PAGE
+  function updateClock() {
+    const now = new Date();
+    const options = {
+      timeZone: "Africa/Johannesburg",
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+
+    const parts = new Intl.DateTimeFormat('en-ZA', options).formatToParts(now);
+    const dayName = parts.find(p => p.type === 'weekday').value;
+    const day     = parts.find(p => p.type === 'day').value;
+    const month   = parts.find(p => p.type === 'month').value;
+    const year    = parts.find(p => p.type === 'year').value;
+    const hour    = parts.find(p => p.type === 'hour').value;
+    const minute  = parts.find(p => p.type === 'minute').value.padStart(2, '0');
+    const second  = parts.find(p => p.type === 'second').value.padStart(2, '0');
+
+    const demo = document.getElementById("demo");
+    if (demo) {
+      demo.textContent = `${dayName}, ${day} ${month} ${year} at ${hour}:${minute}:${second}`;
+    }
+  }
+
+  // Start clock immediately + update every second
+  updateClock();
+  setInterval(updateClock, 1000);
+
+        const form = document.getElementById('enquiryForm');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Reset previous error messages
+            document.querySelectorAll('.error').forEach(el => el.textContent = "");
+            let valid = true;
+
+            // Get values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            const nameRegex = /^[A-Za-z\s'-]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Name validation
+            if (name.length < 2) {
+                document.getElementById('nameError').textContent = "Name must be at least 2 characters.";
+                valid = false;
+            } else if (!nameRegex.test(name)) {
+                document.getElementById('nameError').textContent = "Name can only contain letters, spaces, hyphens or apostrophes.";
+                valid = false;
+            }
+
+            // Email validation
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = "Please enter a valid email address.";
+                valid = false;
+            }
+
+            // Password validation
+            if (password.length < 8) {
+                document.getElementById('passwordError').textContent = "Password must be at least 8 characters long.";
+                valid = false;
+            }
+
+            // Confirm password
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = "Passwords do not match.";
+                valid = false;
+            }
+
+            // If not valid, stop here
+            if (!valid) return;
+
+            // Send email via EmailJS
+            emailjs.send("service_t5qrec3", "template_jqtrxjp", {
+                name: name,
+                email: email,
+                message: `New Enquiry:\nName: ${name}\nEmail: ${email}`
+            })
+            .then((response) => {
+                alert("Thank you! Your enquiry has been submitted successfully.");
+                form.reset();
+            })
+            .catch((error) => {
+                console.error("EmailJS Error:", error);
+                alert("Failed to send enquiry. Please try again or email us directly.");
+            });
+        });
+    });
+</script>
+</body>
+</html>

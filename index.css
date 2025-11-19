@@ -1,0 +1,255 @@
+/* Reset */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: Arial, sans-serif;
+background-image: url('../Images/Image9.jpg');
+background-repeat: no-repeat;   
+background-size: cover;       
+color: #036c5f;
+}
+/* Nav bar */
+.navbar {
+display: flex;
+justify-content: space-between;  
+align-items: center;
+padding: 1rem 2rem;
+background-color: #726f6b;
+position: relative;
+z-index: 5;
+}
+.logo {
+height:80px;
+width:140px;
+object-fit: contain;
+}
+.nav-links {
+list-style: none;
+display: flex;
+gap: 1.5rem;
+}
+.nav-links a{
+color: black;
+text-decoration: none;
+font-weight: bold;
+white-space: nowrap; 
+
+}
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+display: none;
+flex-direction: column;
+width: 30px;
+height: 21px;
+justify-content: space-between;
+}
+.hamburger span {
+display: none;
+height: 3px;
+width: 100%;
+background: black;
+margin: 4px 0;
+transition: 0.4s;
+
+}
+/* Hamburger animation when menu is toggled */
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+.hamburger {
+display: flex; 
+   }
+.navbar {
+padding: 1rem; 
+}
+.logo {
+height: 60px; 
+width: 100px;
+
+}
+.nav-links {
+ display: none; 
+ flex-direction: column;  
+ width: 100%;
+ background-color: grey;  
+ align-items: center;
+ position: absolute;
+ top: 100%;
+ left: 0;
+z-index: 10;
+
+}
+#menu-toggle:checked ~ .nav-links {
+ display: flex; 
+
+}
+
+}
+.container {
+  max-width: 1200px;
+  margin:auto;         
+  padding: 20px;
+}
+/* Main content */
+main {
+text-align:center;
+align-items: center;
+}
+main h1{
+color: #000;
+font-weight: bold;
+font-style: italic;
+margin-bottom: 10px;
+padding: 20px;	
+}
+main p {
+font-size: 1.2rem;   
+font-weight: bold;   
+font-style: italic;  
+color: #000;        	
+}
+/* Contact Form Styling  */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 40px 20px; 
+}
+.contact-container {
+  display: flex;
+  background-color: #79BAEC;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* Image side on the form */
+.contact-image {
+  flex:1;
+  min-width: 100px;
+  object-fit: cover;
+  background-image: url('Images/Image10.jpg');           
+  background-position: center;         
+  background-repeat: no-repeat;
+  border-radius: 15px 0 0 15px;
+}
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: center;
+  
+}
+/*Form side on the right*/
+.contact-form {
+  flex:1;
+  background-color: #79BAEC;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.form-intro {
+  margin:0 0 10px 0;
+  font-size:15px;
+  font-style: italic;
+  color:#000;  
+}
+/*Inputs and selections*/
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  font-style: italic;
+  color: #000;
+  background: #fff;
+}
+input::placeholder {
+  color:grey;
+  font-style: italic;
+}
+label {
+  color: #000;        
+  font-weight: 100;   
+  font-weight: bold; 
+ 
+}
+.container{
+	width:60%;
+	margin: 0 auto;
+}
+.privacy-note{
+	font-size:14px;
+	color:#000;
+	text-align:center;
+	padding:15px;
+}
+.error {
+  color: red;
+  font-style: italic;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 4px;
+}
+/* Submit button */
+button {
+  width: 100%;
+  background-color: #2C7DA0;
+  color:white;
+  padding: 17px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover{
+	background-color:grey;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .contact-container {
+   flex-direction: column;
+}
+.contact-image img {
+    height: 250px;  
+}
+}
+/* Footer styling */
+footer {
+font-style: italic;
+background-color:  #726f6b;
+text-align: center;
+color: black;
+padding: 2.5rem 1rem;
+}
+.footer-nav a:hover {
+
+color: #00bcd4;
+}
+.footer-info {
+
+text-align: center;
+font-size: 0.9rem;
+color: #ccc;
+}

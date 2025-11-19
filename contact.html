@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Free consultations">
+ <meta name="author" content="Wanga Mutsila">
+ <meta name="keywords" content="contact,legal,aid,help">
+ 
+ <title>Contact Us</title>
+  <link rel="stylesheet" href="CSS/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<header>
+
+<div class="navbar">
+  <img src="Images/Image2.png" alt="TM Legal Logo" class="logo">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger"> 
+   <span></span>
+    <span></span>
+    <span></span>
+  </label>
+    <ul class ="nav-links">
+<li> <a href= "index.html">Home page </a> </li>
+<li> <a href = "about.html">About Us</a> </li>
+<li> <a href ="services.html"> Services</a> </li>
+<li> <a href = "volunteering_donations.html">Volunteering & Donations</a> </li>
+<li> <a href = "FAQ.html">  FAQ</a> </i> </li>
+<li> <a href ="contact.html"> Contact Us </a> </li>
+ </ul>
+ </div>
+</header>
+
+<main class="container">
+
+<h1 class="page-title">Contact Us</h1>
+
+  <section class="hours-section">
+    <h2>Operating Hours</h2>
+    <table class="hours-table">
+      <thead>
+        <tr><th>Day</th><th>Hours</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Weekdays</td><td>06:00 - 15:00</td></tr>
+        <tr><td>Saturday</td><td>09:00 - 13:00</td></tr>
+        <tr><td>Sunday/Public Holidays</td><td>Closed</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+<section class="office">
+    <h3>Get In Touch</h3>
+    <p> We are always close at hand for all your legal needs! </p>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+	  
+        <input type="text" id="name" placeholder="Name:" required />
+		  <span id="nameError" class="error"></span>
+		  
+		<input type="email" id="email" placeholder="Email:" required />
+		 <span id="emailError" class="error"></span>
+		
+        <input type="text" id="subject" placeholder="Subject:" required />
+		 <span id="subjectError" class="error"></span>
+		 
+      </div>
+      <textarea id="message"  placeholder="Message:" rows="5" required></textarea>
+	    <span id="messageError" class="error"></span>
+	  
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+<section class="bottom-section">
+ <div class="contact-details">
+      <h3>Contact Details:</h3>
+       <ul>
+        <li> Tel 📞: 067 102 4855 </li>
+        <li> WhatsApp 💬: 089 564 2344 </li>
+        <li> Email ✉️ : 
+		<a href= "https://mail.google.com/mail/?view=cm&to=mutsilawanga4@gmail.com&su=Website%20Inquiry&body=Hello,%20I%20would%20like%20more%20information." target="_blank">mutsilawanga4@gmail.com </a>
+		</li>
+		<li>11982 Orange Farm 7b, Matla Street 1841 Johannesburg, South Africa</li>
+       </ul>
+     </div>
+   
+  <div id="follow-us-section" class="follow-us">
+  
+	 </div>
+  </section>
+
+<div class="map-container">
+<iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57143.432235714405!2d27.824458924892014!3d-26.47298461456202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95ab178daa65d1%3A0xb125f7b60163e674!2sOrange%20Farm%2C%201805%2C%20South%20Africa!5e0!3m2!1sen!2sie!4v1754396235878!5m2!1sen!2sie" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>  
+</main>
+
+<footer>
+<p id="demo"> </p>
+<p>&copy; 2025 ST10465276. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // FOOTER LIVE CLOCK — EXACT SAME AS YOUR DONATIONS PAGE
+  function updateClock() {
+    const now = new Date();
+    const options = {
+      timeZone: "Africa/Johannesburg",
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+
+    const parts = new Intl.DateTimeFormat('en-ZA', options).formatToParts(now);
+    const dayName = parts.find(p => p.type === 'weekday').value;
+    const day     = parts.find(p => p.type === 'day').value;
+    const month   = parts.find(p => p.type === 'month').value;
+    const year    = parts.find(p => p.type === 'year').value;
+    const hour    = parts.find(p => p.type === 'hour').value;
+    const minute  = parts.find(p => p.type === 'minute').value.padStart(2, '0');
+    const second  = parts.find(p => p.type === 'second').value.padStart(2, '0');
+
+    const demo = document.getElementById("demo");
+    if (demo) {
+      demo.textContent = `${dayName}, ${day} ${month} ${year} at ${hour}:${minute}:${second}`;
+    }
+  }
+
+  // Start clock immediately + update every second
+  updateClock();
+  setInterval(updateClock, 1000);
+  // --- Initialize EmailJS ---
+  emailjs.init("gOm6mI9saHyV-NnzE");
+
+  // --- SOCIAL LINKS ---
+  const socialLinks = [
+    { name: "Facebook", url: "https://www.facebook.com/p/T-Mutsila-Legal-100076329323659/", icon: "fab fa-facebook-f" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/thina-mutsila-8589a9213/", icon: "fab fa-linkedin-in" },
+    { name: "X / Twitter", url: "https://twitter.com/Mutsila_Legal", icon: "fab fa-x-twitter" }
+  ];
+
+  const container = document.getElementById("follow-us-section");
+  const title = document.createElement("h3");
+  title.textContent = "Follow Us On Our Socials:";
+  container.appendChild(title);
+
+  const ul = document.createElement("ul");
+  socialLinks.forEach(link => {
+    const li = document.createElement("li");
+    const icon = document.createElement("i");
+    icon.className = link.icon;
+
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.target = "_blank";
+    a.textContent = link.name;
+
+    li.appendChild(icon);
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  container.appendChild(ul);
+
+  // --- CONTACT FORM VALIDATION ---
+  const form = document.getElementById("contact-form");
+  const submitBtn = form.querySelector("button[type='submit']");
+
+   const lettersOnly = /^[A-Za-z\s]+$/;
+   
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Clear errors
+    document.querySelectorAll(".error").forEach(el => el.textContent = "");
+
+    // Get input values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    let valid = true;
+
+    // --- VALIDATIONS ---
+    //Validate Name
+    if (!name || !/^[A-Za-z\s]+$/.test(name)) {
+      document.getElementById("nameError").textContent = "Please enter a valid name (letters only).";
+      valid = false;
+    }
+
+    //Validate Email
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById("emailError").textContent = "Please enter a valid email address.";
+      valid = false;
+    }
+	//Validate Subject
+    if (!subject) {
+      document.getElementById("subjectError").textContent = "Subject is required.";
+      valid = false;
+    } else if (!lettersOnly.test(subject)) {
+      document.getElementById("subjectError").textContent = "Subject must contain letters only.";
+      valid = false;
+    }
+     //Validate Message
+    if (!message) {
+      document.getElementById("messageError").textContent = "Message cannot be empty.";
+      valid = false;
+    }
+
+    if (!valid) return; // Stop submission if validation fails
+  
+    // Change button
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    // --- SEND EMAIL ---
+    emailjs.send("service_t5qrec3", "template_jqtrxjp", {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message
+    })
+    .then(() => {
+      alert("Thank you! Your message has been sent successfully.");
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      alert("Failed to send. Please try again or email us directly at mutsilawanga4@gmail.com");
+    })
+    .finally(() => {
+      submitBtn.textContent = "Submit";
+      submitBtn.disabled = false;
+    });
+  });
+});
+</script>
+</body>
+</html>

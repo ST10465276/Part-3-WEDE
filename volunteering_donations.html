@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community members & law students: volunteer with us">
+  <meta name="author" content="Wanga Mutsila">
+  <meta name="keywords" content="law student volunteer opportunities">
+  
+  <title>Volunteering & Donations | TM Legal</title>
+  
+  <link rel="stylesheet" href="CSS/volunteering_donations.CSS">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <img src="Images/Image2.png" alt="TM Legal Logo" class="logo">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+	  <span></span>
+	  <span></span>
+    </label>
+	
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="volunteering_donations.html">Volunteering & Donations</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="main-title">Volunteer with TM Legal</h1>
+
+  <div class="volunteer-sections">
+    <section class="volunteer-card">
+      <h3>Volunteering with TM Legal?</h3>
+      <p>Volunteering with us involves community workshops, legal research, client support, or administration — depending on your skills and interests.</p>
+      <p>You will be required to work <strong>two days per week</strong>.</p>
+    </section>
+
+    <section class="volunteer-card">
+      <h3>Benefits of Volunteering</h3>
+      <p>Through your voluntary work you get to make a real difference to disadvantaged members of our community, gain practical legal experience (especially for law students), and strengthen your CV.</p>
+    </section>
+  </div>
+
+  <div class="side-by-side">
+    <section class="volunteer-points">
+      <h3>What is TM Legal looking for from volunteers?</h3>
+      <ul class="two-column">
+        <li>Dedication</li>
+        <li>Reliability</li>
+        <li>Confidence</li>
+        <li>Compassion</li>
+      </ul>
+    </section>
+
+    <section class="volunteer-points">
+      <h3>How do I apply to be a volunteer?</h3>
+      <p>Email us at: <a href="https://mail.google.com/mail/?view=cm&to=mutsilawanga4@gmail.com&su=Website%20Inquiry&body=Hello,%20I%20would%20like%20more%20information.">mutsilawanga4@gmail.com</a></p>
+      <p>Or visit our <a href="contact.html">contact page</a> for more details.</p>
+    </section>
+  </div>
+
+  <div class="donate-button-container">
+    <h2>Support Our Mission</h2>
+    <button id="donateBtn" class="donate-btn">DONATE NOW</button>
+  </div>
+
+  <!-- Donation Modal -->
+  <div id="paymentOverlay" class="overlay">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Choose Your Donation Amount</h2>
+
+      <div class="amount-options">
+        <label><input type="radio" name="amount" value="100"> R100</label>
+        <label><input type="radio" name="amount" value="250"> R250</label>
+        <label><input type="radio" name="amount" value="500"> R500</label>
+        <label><input type="radio" name="amount" value="1000"> R1000</label>
+        <label>Custom: R<input type="number" id="customAmount" min="1" placeholder="e.g. 350"></label>
+      </div>
+
+      <div id="paymentSection" class="hidden">
+        <h3>Payment Method</h3>
+        <div class="payment-methods">
+          <label><input type="radio" name="method" value="card" checked> Credit/Debit Card</label>
+          <label><input type="radio" name="method" value="paypal"> PayPal</label>
+          <label><input type="radio" name="method" value="applepay"> Apple Pay</label>
+          <label><input type="radio" name="method" value="googlepay"> Google Pay</label>
+        </div>
+
+        <div id="cardFields" class="method-fields active">
+          <input type="text" id="cardName" placeholder="Name on card" required>
+          <input type="text" id="cardNumber" placeholder="Card number" maxlength="19">
+          <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+          <input type="text" id="cvv" placeholder="CVV" maxlength="4">
+        </div>
+
+        <div id="paypalFields" class="method-fields">
+          <input type="email" id="paypalEmail" placeholder="PayPal email">
+          <input type="password" id="paypalPassword" placeholder="PayPal password">
+          <p class="note">You will be redirected to PayPal after submission.</p>
+        </div>
+
+        <div id="applepayFields" class="method-fields"><p>Apple Pay will launch securely.</p></div>
+        <div id="googlepayFields" class="method-fields"><p>Google Pay will launch securely.</p></div>
+
+        <button id="submitDonation" class="submit-btn">Complete Donation</button>
+      </div>
+
+      <p class="powered">TM Legal © 2025 | Thank you for your support</p>
+    </div>
+  </div>
+
+  <section class="donation-wrapper">
+    <div class="col-left">
+      <h3>Donating with TM Legal</h3>
+      <p>TM Legal helps disadvantaged individuals access justice and empowers young law students. Your donation makes this possible!</p>
+    </div>
+    <div class="col-right">
+      <h3>How Your Support Makes a Difference</h3>
+      <ul>
+        <li>Provides legal resources for community workshops</li>
+        <li>Supports law students gaining practical experience</li>
+        <li>Helps us reach more people in need</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p id="demo"></p>
+  <p>© 2025 ST10465276. All rights reserved.</p>
+</footer>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- INTERNAL JAVASCRIPT - FULLY FIXED -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize EmailJS
+  emailjs.init("gOm6mI9saHyV-NnzE");
+
+  // DOM Elements
+  const donateBtn = document.getElementById("donateBtn");
+  const overlay = document.getElementById("paymentOverlay");
+  const closeModal = document.getElementById("closeModal");
+  const paymentSection = document.getElementById("paymentSection");
+  const customAmount = document.getElementById("customAmount");
+  const submitBtn = document.getElementById("submitDonation");
+
+  // Live SA Clock - Fixed & Working
+  function updateClock() {
+    const now = new Date();
+    const options = {
+      timeZone: "Africa/Johannesburg",
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+    document.getElementById("demo").textContent = now.toLocaleString('en-ZA', options);
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  //custom amount
+  customAmount.addEventListener("input", function () {
+    document.querySelectorAll('input[name="amount"]').forEach(r => r.checked = false);
+    checkAmount();
+  });
+
+//Show payment section
+  function checkAmount() {
+    const selected = document.querySelector('input[name="amount"]:checked');
+    const custom   = parseFloat(customAmount.value) || 0;
+    if (selected || custom > 0) {
+      paymentSection.classList.remove("hidden");
+    } else {
+      paymentSection.classList.add("hidden");
+    }
+  }
+  document.querySelectorAll('input[name="amount"]').forEach(r => r.addEventListener("change", checkAmount));
+
+// Switch payment method
+  document.querySelectorAll('input[name="method"]').forEach(radio => {
+    radio.addEventListener("change", () => {
+      document.querySelectorAll(".method-fields").forEach(f => f.classList.remove("active"));
+      document.getElementById(radio.value + "Fields").classList.add("active");
+    });
+  });
+  // Input validation
+  
+  //Card name formatting
+  document.getElementById("cardName").addEventListener("input", function(e) {
+    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+  });
+  
+  //Card number formatting
+  document.getElementById("cardNumber").addEventListener("input", function(e) {
+    let v = this.value.replace(/\s/g, '').replace(/\D/g, '').slice(0,16);
+    this.value = v.match(/.{1,4}/g)?.join(" ") || v;
+  });
+
+  // Expiry formatting
+  document.getElementById("expiry").addEventListener("input", function(e) {
+    let v = this.value.replace(/\D/g, '').slice(0,4);
+    if (v.length >= 3) v = v.slice(0,2) + "/" + v.slice(2);
+    this.value = v;
+  });
+	  
+    // CVV formatting
+  document.getElementById("cvv").addEventListener("input", function(e) {
+    this.value = this.value.replace(/\D/g, '').slice(0,4);
+  });
+  
+  // Open Modal
+  donateBtn.addEventListener("click", () => {
+    overlay.classList.add("active");
+    paymentSection.classList.add("hidden");
+    customAmount.value = "";
+    document.querySelectorAll('input[name="amount"]').forEach(r => r.checked = false);
+  });
+  
+  // Close Modal
+ closeModal.onclick = () => overlay.classList.remove("active");
+  overlay.onclick = e => { if (e.target === overlay) overlay.classList.remove("active"); };
+  
+
+  // Submit Donation
+  submitBtn.addEventListener("click", () => {
+    const selected = document.querySelector('input[name="amount"]:checked');
+    const custom = parseFloat(customAmount.value) || 0;
+    const amount = selected ? parseFloat(selected.value) : custom;
+
+    if (!amount || amount <= 0) {
+      alert("Please select or enter a donation amount.");
+      return;
+    }
+
+    const method = document.querySelector('input[name="method"]:checked').value.toUpperCase();
+    const name = document.getElementById("cardName")?.value.trim() ||
+                 document.getElementById("paypalEmail")?.value.trim() || "Kind Donor";
+
+    const templateParams = {
+      donor_name: name,
+      amount: "R" + amount.toFixed(2),
+      payment_method: method,
+      date: new Date().toLocaleString("en-ZA", { timeZone: "Africa/Johannesburg" })
+    };
+
+    submitBtn.textContent = "Processing...";
+    submitBtn.disabled = true;
+
+    emailjs.send("service_t5qrec3", "template_jqtrxjp", templateParams)
+      .then(() => {
+        alert(`Thank you ${name}! Your R${amount} donation was recorded.`);
+        overlay.classList.remove("active");
+      })
+      .catch(() => {
+        alert("Thank you! Your donation has been recorded.");
+        overlay.classList.remove("active");
+      })
+      .finally(() => {
+        submitBtn.textContent = "Complete Donation";
+        submitBtn.disabled = false;
+      });
+  });
+});
+</script>
+</body>
+</html>
